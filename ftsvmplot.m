@@ -2,26 +2,16 @@ function ftsvmplot(ftsvm_struct,Traindata,Trainlabel)
 % Function:  visualizing 
 % Input:      
 % ftsvm_struct,Traindata,Trainlabel
-
+%
 % Output:    
-
-
-%  Author: Bin-BinGaa (csgaobb@gmail.com)
+%
+%  Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
+
 if (nargin <1|| nargin > 3) % check correct number of arguments
     help fftsvmplot
 else
-
-% if ~isempty(ftsvm_struct.scaleData)
-%     scaleData=ftsvm_struct.scaleData;
-%     for c = 1:size(Traindata, 2)
-%         Traindata(:,c) = scaleData.scaleFactor(c) * ...
-%             (Traindata(:,c) +  scaleData.shift(c));
-%     end
-% end    
-    
-    
 %%
 minX = min(Traindata(:, 1));
 maxX = max(Traindata(:, 1));
@@ -56,15 +46,15 @@ beta =ftsvm_struct.beta;
 
 [groupIndex, groupString] = grp2idx(Trainlabel);
 groupIndex = 1 - (2* (groupIndex-1));
-xp=Traindata(groupIndex==1,:);%�����ѵ����?
-xn=Traindata(groupIndex==-1,:);%�����ѵ����ftsvm_struct.NXpv
+xp=Traindata(groupIndex==1,:);
+xn=Traindata(groupIndex==-1,:);
 
 
 ln=size(alpha,1);
 lp=size(beta,1);
 
-nsvIndex =  alpha > (ftsvm_struct.Parameter.CC*1e-4);%& alpha< (ftsvm_struct.Parameter.CC*ftsvm_struct.sn-sqrt(eps));
-psvIndex =  beta > (ftsvm_struct.Parameter.CC*1e-4);%&  beta< (ftsvm_struct.Parameter.CC*ftsvm_struct.sp-sqrt(eps));
+nsvIndex =  alpha > (ftsvm_struct.Parameter.CC*1e-4);
+psvIndex =  beta > (ftsvm_struct.Parameter.CC*1e-4);
 
 psv = xp(psvIndex,:);
 nsv = xn(nsvIndex,:);
@@ -82,7 +72,6 @@ figure
 sp=mapminmax(ftsvm_struct.sp',0.1,1)';
 [xq,yq] = meshgrid(linspace(min(xp(:, 1)), max(xp(:, 1)), 100), linspace(min(xp(:, 2)), max(xp(:, 2)), 100));
 vq = griddata(xp(:, 1), xp(:, 2),sp,xq,yq,'v4');
-% vq(find(vq<0))=0;
 contourf(xq,yq,vq,100,'LineStyle','none')
 colormap(jet);
 hold on
@@ -96,7 +85,6 @@ figure
 sn=mapminmax(ftsvm_struct.sn',0.1,1)';
 [xq,yq] = meshgrid(linspace(min(xn(:, 1)), max(xn(:, 1)), 100), linspace(min(xn(:, 2)), max(xn(:, 2)), 100));
 vq = griddata(xn(:, 1), xn(:, 2),sn,xq,yq,'v4');
-% vq(find(vq<0))=0;
 contourf(xq,yq,vq,100,'LineStyle','none');
 colormap(jet);
 hold on
@@ -109,10 +97,10 @@ title(line,'FontSize',12);
 
 figure
 h1 = plot(xp(:, 1), xp(:, 2), 'r+','LineWidth',1.5);
-text(xp(:,1),xp(:,2),num2str(round(100*sp)/100),'color','b','FontSize',4)%��(x,y)��дstring
+text(xp(:,1),xp(:,2),num2str(round(100*sp)/100),'color','b','FontSize',4);
 hold on
 h2 = plot(xn(:, 1), xn(:, 2), 'bx','LineWidth',1.5);
-text(xn(:,1),xn(:,2),num2str(round(100*sn)/100),'color','r','FontSize',4)%��(x,y)��дstring
+text(xn(:,1),xn(:,2),num2str(round(100*sn)/100),'color','r','FontSize',4);
 if ~isempty(ftsvm_struct.NXpv)|~isempty(ftsvm_struct.NXnv)
     if ~isempty(ftsvm_struct.NXpv)
     h3 = plot(xp(ftsvm_struct.NXpv,1),xp(ftsvm_struct.NXpv,2),'gs','MarkerSize',7);
@@ -155,11 +143,11 @@ end
 h4=legend([h1,h2,h3,h4],'class +','class -','Support Vectors','Outliers');
 set(h4,'EdgeColor','w');
 [C,h] = contour(bigX, bigY, bigZ,[0 0],'k','LineWidth',1.5);
-text_handle=clabel(C,h,'Color','k');
+clabel(C,h,'Color','k');
 [C,h] = contour(bigX, bigY, bigf1,[0 0],'b:','LineWidth',1.5);
-text_handle=clabel(C,h,'Color','b');
+clabel(C,h,'Color','b');
 [C,h] = contour(bigX, bigY, bigf2,[0 0],'r:','LineWidth',1.5);
-text_handle=clabel(C,h,'Color','r');
+clabel(C,h,'Color','r');
 
 xlabel('demension1','FontSize',12);
 ylabel('demension2','FontSize',12);

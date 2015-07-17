@@ -4,14 +4,13 @@ function  [ftsvm_struct] = ftsvmtrain(Traindata,Trainlabel,Parameter)
 % Traindata           -  the train data where the feature are stored
 % Trainlabel          -  the  lable of train data  
 % Parameter         -  the parameters for ftsvm
-
+%
 % Output:    
 % ftsvm_struct      -  ftsvm model
-
-%  Author: Bin-BinGaa (csgaobb@gmail.com)
+%
+%  Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
-
 
 if ( nargin>3||nargin<3) % check correct number of arguments
     help  ftsvmtrain
@@ -54,7 +53,7 @@ Ln=Trainlabel(groupIndex==-1);
 X=[Xp;Xn];
 L=[Lp;Ln];
 % compute fuzzy membership
-[sp,sn,NXpv,NXnv]=Gbbftsvm(Xp,Xn,Parameter);
+[sp,sn,NXpv,NXnv]=fuzzy(Xp,Xn,Parameter);
 
 lp=sum(groupIndex==1);
 ln=sum(groupIndex==-1);

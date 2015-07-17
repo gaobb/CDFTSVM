@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>demo</title><meta name="generator" content="MATLAB 8.3"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-07-16"><meta name="DC.source" content="demo.m"><style type="text/css">
+      --><title>demo</title><meta name="generator" content="MATLAB 8.5"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-07-17"><meta name="DC.source" content="demo.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,57 +66,49 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">A CDFTSVM demo  on artifical datases</a></li><li><a href="#2">Nolinear CDFTSVM</a></li></ul></div><h2>A CDFTSVM demo  on artifical datases<a name="1"></a></h2><pre class="codeinput">clc
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">A CDFTSVM demo  on artifical datases</a></li><li><a href="#2">load train data</a></li><li><a href="#3">load test data</a></li><li><a href="#4">seting parameters</a></li><li><a href="#5">training rbf cdftsvm</a></li><li><a href="#6">training rbf cdftsvm</a></li><li><a href="#7">visualization</a></li></ul></div><h2>A CDFTSVM demo  on artifical datases<a name="1"></a></h2><pre class="codeinput">clc
 clear
-<span class="comment">% load train data</span>
-load <span class="string">synthtr</span>
-
+</pre><h2>load train data<a name="2"></a></h2><pre class="codeinput">load <span class="string">synthtr</span>
 traindata=synthtr(:,1:2);
 trainlabel=synthtr(:,3)*(-2)+1;
-
-<span class="comment">% load test data</span>
-load <span class="string">synthte</span>
-
+</pre><h2>load test data<a name="3"></a></h2><pre class="codeinput">load <span class="string">synthte</span>
 testdata=synthte(:,1:2);
 testlabel=synthte(:,3)*(-2)+1;
-</pre><h2>Nolinear CDFTSVM<a name="2"></a></h2><p>seting parameters</p><pre class="codeinput">Parameter.ker=<span class="string">'rbf'</span>;
+
+<span class="comment">% Nolinear CDFTSVM</span>
+</pre><h2>seting parameters<a name="4"></a></h2><pre class="codeinput">Parameter.ker=<span class="string">'rbf'</span>;
 Parameter.CC=8;
 Parameter.CR=1;
 Parameter.p1=0.2;
 Parameter.v=10;
 Parameter.algorithm=<span class="string">'CD'</span>;
-
-<span class="comment">% training rbf cdftsvm</span>
-[ftsvm_struct] = ftsvmtrain(traindata,trainlabel,Parameter);
-<span class="comment">% training rbf cdftsvm</span>
-[acc]= ftsvmclass(ftsvm_struct,testdata,testlabel);
-<span class="comment">% seting parameters</span>
- ftsvmplot(ftsvm_struct,traindata,trainlabel);
+</pre><h2>training rbf cdftsvm<a name="5"></a></h2><pre class="codeinput">[ftsvm_struct] = ftsvmtrain(traindata,trainlabel,Parameter);
 </pre><pre class="codeoutput">Optimising ...
-convergent iteration times     : 86
-convergent iteration times     : 191
-Testing ...
+convergent iteration times     : 94
+convergent iteration times     : 128
+</pre><h2>training rbf cdftsvm<a name="6"></a></h2><pre class="codeinput">[acc]= ftsvmclass(ftsvm_struct,testdata,testlabel);
+</pre><pre class="codeoutput">Testing ...
 Accuracy : 91.3000 (913/1000)
-Testing ...
+</pre><h2>visualization<a name="7"></a></h2><pre class="codeinput"> ftsvmplot(ftsvm_struct,traindata,trainlabel);
+</pre><pre class="codeoutput">Testing ...
 the accuracy can not be calculated, because of lack of the labels of testing data
-</pre><img vspace="5" hspace="5" src="demo_01.png" alt=""> <img vspace="5" hspace="5" src="demo_02.png" alt=""> <img vspace="5" hspace="5" src="demo_03.png" alt=""> <img vspace="5" hspace="5" src="demo_04.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="demo_01.png" alt=""> <img vspace="5" hspace="5" src="demo_02.png" alt=""> <img vspace="5" hspace="5" src="demo_03.png" alt=""> <img vspace="5" hspace="5" src="demo_04.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% A CDFTSVM demo  on artifical datases
 clc
 clear
-% load train data
+%% load train data
 load synthtr
-
 traindata=synthtr(:,1:2);
 trainlabel=synthtr(:,3)*(-2)+1;
 
-% load test data
+%% load test data
 load synthte
-
 testdata=synthte(:,1:2);
 testlabel=synthte(:,3)*(-2)+1;
-%% Nolinear CDFTSVM
-% seting parameters
+
+% Nolinear CDFTSVM
+%% seting parameters
 Parameter.ker='rbf';
 Parameter.CC=8;
 Parameter.CR=1;
@@ -124,11 +116,13 @@ Parameter.p1=0.2;
 Parameter.v=10;
 Parameter.algorithm='CD';    
 
-% training rbf cdftsvm
+%% training rbf cdftsvm
 [ftsvm_struct] = ftsvmtrain(traindata,trainlabel,Parameter);
-% training rbf cdftsvm
+
+%% training rbf cdftsvm
 [acc]= ftsvmclass(ftsvm_struct,testdata,testlabel);
-% seting parameters
+
+%% visualization
  ftsvmplot(ftsvm_struct,traindata,trainlabel);
 
 ##### SOURCE END #####

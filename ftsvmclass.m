@@ -1,16 +1,15 @@
-function [acc,outclass,f,fp,fn,ExpendTime]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
+function [acc,outclass,f,fp,fn,time]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
 % Function:  testing ftsvm on test data
 % Input:
 % ftsvm_struct       - the trained  ftsvm model
-% Testdata              - test data
+% Testdata             - test data
 % Testlabel             - test label
-
+%
 % Output:
-% acc                        - accuracy
+% acc                       - accuracy
 % outclass               - predict label
-
-
-%  Author: Bin-BinGaa (csgaobb@gmail.com)
+%
+%  Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
 
@@ -21,7 +20,7 @@ else
     
     [rt,ct]=size(Testdata);
     
-    st1 = cputime;
+    tic;
     if ~isempty(ftsvm_struct.scaleData)
         scaleData=ftsvm_struct.scaleData;
         for k = 1:size(Testdata, 2)
@@ -47,7 +46,6 @@ else
             fp=(Testdata*vp(1:(length(vp)-1))+vp(length(vp)))./norm(vp(1:(length(vp)-1)));
             fn=(Testdata*vn(1:(length(vn)-1))+vn(length(vn)))./norm(vn(1:(length(vn)-1)));
         case 'rbf'
-            % ����˾���
             K = feval(kfun,Testdata,X,kfunargs{:});
             fp=(K*vp(1:(length(vp)-1))+vp(length(vp)))./norm(vp(1:(length(vp)-1)));
             fn=(K*vn(1:(length(vn)-1))+vn(length(vn)))./norm(vn(1:(length(vn)-1)));
@@ -72,5 +70,5 @@ else
         acc=[];
         fprintf('the accuracy can not be calculated, because of lack of the labels of testing data\n');
     end
-    ExpendTime= cputime-st1;
+    time= toc;
 end
