@@ -1,10 +1,10 @@
 function kval = rbf_kernel(u,v,rbf_sigma,varargin)
 %RBF_KERNEL Radial basis function kernel for SVM functions
 
-% Copyright 2004-2012 The MathWorks, Inc.
+%  Author: Bin-Bin Gao (csgaobb@gmail.com)
+% Created on 2014.10.10
+% Last modified on 2015.07.16
 
-
- 
 if nargin < 3 || isempty(rbf_sigma)
     rbf_sigma = 1;
 else
