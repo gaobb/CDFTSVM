@@ -1,4 +1,4 @@
-%% A CDFTSVM demo  on artifical datases
+%% Demo code for training and tesing the CDFTSVM on an artifical dataset
 clc
 clear
 %% load train data
@@ -26,5 +26,3 @@ Parameter.algorithm='CD';
 %% training rbf cdftsvm
 [acc]= ftsvmclass(ftsvm_struct,testdata,testlabel);
 
-%% visualization
- ftsvmplot(ftsvm_struct,traindata,trainlabel);
