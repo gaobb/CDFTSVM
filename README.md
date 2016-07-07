@@ -1,10 +1,10 @@
-# CDFTSVM
+# [CDFTSVM](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7424278&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7424278)
 Coordinate Descent Fuzzy Twin Support Vector Machine for Classification
 
 
 The package includes the MATLAB code of CDFTSVM. The CDFTSVM not only inherits the advantages of twin SVM but also leads to a fast and robust classification results. It is suitable for large-scale and noisy inputs.
 
-http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7424278&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7424278
+
 
 % Usage Instructions:
 
