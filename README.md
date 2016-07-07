@@ -6,7 +6,7 @@ The package includes the MATLAB code of CDFTSVM. The CDFTSVM not only inherits t
 
 
 
-% Usage Instructions:
+# Usage Instructions:
 
 In matlab, run demo.m.
 
