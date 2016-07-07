@@ -1,12 +1,12 @@
-function [acc,outclass,f,fp,fn,time]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
+function [acc,outclass,time]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
 % Function:  testing ftsvm on test data
 % Input:
-% ftsvm_struct       - the trained  ftsvm model
+% ftsvm_struct         - the trained  ftsvm model
 % Testdata             - test data
-% Testlabel             - test label
+% Testlabel            - test label
 %
 % Output:
-% acc                       - accuracy
+% acc                    - accuracy
 % outclass               - predict label
 %
 %  Author: Bin-Bin Gao (csgaobb@gmail.com)

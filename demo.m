@@ -1,4 +1,4 @@
-%% Demo code for training and tesing the CDFTSVM on an artifical dataset
+%% Demo code for training and testing the CDFTSVM on an artifical dataset
 clc
 clear
 %% load train data

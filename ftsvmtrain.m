@@ -1,8 +1,8 @@
 function  [ftsvm_struct] = ftsvmtrain(Traindata,Trainlabel,Parameter)
 % Function:  train cdftsvm
 % Input:      
-% Traindata           -  the train data where the feature are stored
-% Trainlabel          -  the  lable of train data  
+% Traindata         -  the train data where the feature are stored
+% Trainlabel        -  the  lable of train data  
 % Parameter         -  the parameters for ftsvm
 %
 % Output:    
@@ -12,7 +12,8 @@ function  [ftsvm_struct] = ftsvmtrain(Traindata,Trainlabel,Parameter)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
 
-if ( nargin>3||nargin<3) % check correct number of arguments
+% check correct number of arguments
+if ( nargin>3||nargin<3) 
     help  ftsvmtrain
 end
 
@@ -97,11 +98,11 @@ switch  Parameter.algorithm
         [beta , vn] =  L1CD(R,S,CR,CC2);
         vn=-vn;
     case  'qp'
-        QR=(S'*S+CR*eye(lp+ln+1))\R';
+        QR=(S'*S+CR*eye(size(S'*S)))\R';
         RQR=R*QR;
         RQR=(RQR+RQR')/2;
         
-        QS=(R'*R+CR*eye(lp+ln+1))\S';
+        QS=(R'*R+CR*eye(size(R'*R)))\S';
         SQS=S*QS;
         SQS=(SQS+SQS')/2;
 
@@ -109,7 +110,7 @@ switch  Parameter.algorithm
         [beta,~,~] =qp(SQS,-ones(lp,1),[],[],zeros(lp,1),CC2,ones(lp,1));
         
         vp=-QR*alpha;
-        vn=QS*gama;
+        vn=QS*beta;
     case  'QP'
         QR=(S'*S+CR*eye(size(S'*S)))\R';
         RQR=R*QR;

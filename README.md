@@ -6,6 +6,10 @@ The package includes the MATLAB code of CDFTSVM. The CDFTSVM not only inherits t
 
 http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7424278&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7424278
 
+% Usage Instructions:
+
+In matlab, run demo.m.
+
 # Citations
 The following is a [BibTeX](http://www.bibtex.org/) for the CDFTSVM.
 ```
@@ -18,3 +22,6 @@ The following is a [BibTeX](http://www.bibtex.org/) for the CDFTSVM.
   organization={IEEE}
 }
 ```
+
+If you have any problems about the package, you can contact me by email (csgaobb@gmail.com).
+
