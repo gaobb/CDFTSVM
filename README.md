@@ -10,8 +10,10 @@ The package includes the MATLAB code of CDFTSVM. The CDFTSVM not only inherits t
 
 In matlab, run demo.m.
 
-# Citations
-The following is a [BibTeX](http://www.bibtex.org/) for the CDFTSVM.
+
+# Additional Information
+
+If you find CDFTSVM helpful, please cite it as
 ```
 @inproceedings{gao2015coordinate,
   title={Coordinate Descent Fuzzy Twin Support Vector Machine for Classification},
@@ -22,6 +24,5 @@ The following is a [BibTeX](http://www.bibtex.org/) for the CDFTSVM.
   organization={IEEE}
 }
 ```
-
-If you have any problems about the package, you can contact me by email (csgaobb@gmail.com).
+For any questions and comments, please send your email to csgaobb@gmail.com.
 
