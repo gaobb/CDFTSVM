@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function [acc,outclass,time, fp, fn]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
+=======
+function [acc,outclass,time]= ftsvmclass(ftsvm_struct,Testdata,Testlabel)
+>>>>>>> 0580ee96855f76ed12515cef67ba0c506e927734
 % Function:  testing ftsvm on test data
 % Input:
 % ftsvm_struct         - the trained  ftsvm model
@@ -11,7 +15,11 @@ function [acc,outclass,time, fp, fn]= ftsvmclass(ftsvm_struct,Testdata,Testlabel
 %
 %  Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
+<<<<<<< HEAD
 % Last modified on 2017.04.14
+=======
+% Last modified on 2015.07.16
+>>>>>>> 0580ee96855f76ed12515cef67ba0c506e927734
 
 if ( nargin>3||nargin<2) % check correct number of arguments
     help ftsvmclass
