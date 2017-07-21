@@ -21,11 +21,7 @@ ker=Parameter.ker;
 CC=Parameter.CC;
 CR=Parameter.CR;
 Parameter.autoScale=0;
-<<<<<<< HEAD
 %Parameter.showplots=0;
-=======
-Parameter.showplots=0;
->>>>>>> 0580ee96855f76ed12515cef67ba0c506e927734
 autoScale=Parameter.autoScale;
 
 
