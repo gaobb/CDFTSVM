@@ -3,11 +3,12 @@ This package is a MATLAB implementation of ["Coordinate Descent Fuzzy Twin Suppo
 The CDFTSVM not only inherits the advantages of twin SVM but also leads to a fast and robust classification results. It is suitable for high dimension and noisy inputs.
 
 
-# Usage Instructions:
+# Usage Instructions
 
 In matlab, run demo.m.
 
-# Visualization:
+# Visualization
+
 <div align=center><img width="450" height="450" src="./images/CDFTSVMRbf.png"/></div>
 
 # Additional Information
