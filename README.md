@@ -1,4 +1,4 @@
-This package is a MATLAB implementation of ["Coordinate Descent Fuzzy Twin Support Vector Machine for Classification",Bin-Bin Gao, Jian-Jun Wang, Yao Wang and Chan-Yun Yang](http://lamda.nju.edu.cn/gaobb/Pub_files/icmla15_FTWSVM.pdf). You can train cdftsvm model on your own dataset for binary classification problems. This package is created by [Bin-Bin Gao](http://lamda.nju.edu.cn/gaobb/).
+This package is a MATLAB implementation of ["Coordinate Descent Fuzzy Twin Support Vector Machine for Classification", Bin-Bin Gao, Jian-Jun Wang, Yao Wang and Chan-Yun Yang](http://lamda.nju.edu.cn/gaobb/Pub_files/icmla15_FTWSVM.pdf). You can train cdftsvm model on your own dataset for binary classification problems. This package is created by [Bin-Bin Gao](http://lamda.nju.edu.cn/gaobb/).
 
 The CDFTSVM not only inherits the advantages of twin SVM but also leads to a fast and robust classification results. It is suitable for high dimension and noisy inputs.
 
