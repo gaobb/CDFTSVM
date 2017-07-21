@@ -9,6 +9,7 @@ In matlab, run demo.m.
 
 # Visualization:
 <div align=center><img width="450" height="450" src="./images/CDFTSVMRbf.png"/></div>
+
 # Additional Information
 
 If you find CDFTSVM helpful, please cite it as
