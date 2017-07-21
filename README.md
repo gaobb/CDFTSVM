@@ -8,8 +8,7 @@ The CDFTSVM not only inherits the advantages of twin SVM but also leads to a fas
 In matlab, run demo.m.
 
 # Visualization:
-![RBF](./images/CDFTSVMRbf.png)
-
+<div align=center><img width="150" height="150" src="./images/CDFTSVMRbf.png"/></div>
 # Additional Information
 
 If you find CDFTSVM helpful, please cite it as
