@@ -1,7 +1,7 @@
 function kval = rbf_kernel(u,v,rbf_sigma,varargin)
 %RBF_KERNEL Radial basis function kernel for SVM functions
 
-%  Author: Bin-Bin Gao (csgaobb@gmail.com)
+% Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
 

@@ -1,4 +1,4 @@
-% Version 1.0-Oct-2014  
+%   Version 1.0-Oct-2014  
 %
 %   Coordinate Descent Fuzzy Twin Support Vector for Classification
 %   mainly function

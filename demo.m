@@ -27,6 +27,6 @@ Parameter.showplots = true;
 %% training rbf cdftsvm
 [ftsvm_struct] = ftsvmtrain(traindata,trainlabel,Parameter);
 
-%% training rbf cdftsvm
+%% testing rbf cdftsvm
 [acc]= ftsvmclass(ftsvm_struct,testdata,testlabel);
 
