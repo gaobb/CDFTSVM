@@ -6,7 +6,7 @@ function  [alpha ,v,iter] = L1CD(H,G,cm,cp,eps,max_iter)
 % Output:
 % alpha ,v,iter
 %
-%  Author: Bin-Bin Gao (csgaobb@gmail.com)
+% Author: Bin-Bin Gao (csgaobb@gmail.com)
 % Created on 2014.10.10
 % Last modified on 2015.07.16
 
