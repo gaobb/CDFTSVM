@@ -1,6 +1,7 @@
 %% Demo code for training and testing the CDFTSVM on an artifical dataset
 clc
 clear
+run('setup')
 %% load train data
 load data/synthtr
 
