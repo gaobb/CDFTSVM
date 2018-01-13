@@ -26,3 +26,12 @@ If you find CDFTSVM helpful, please cite it as
 ```
 For any questions and comments, please send your email to csgaobb@gmail.com.
 
+
+ATTN1: This packages are free for academic usage. You can run them at your own risk. For other
+purposes, please contact Bin-Bin Gao (csgaobb@gmail.com).
+
+
+ATTN2: This packages were developed by Bin-Bin Gao.
+For any problem concerning the code, please feel free to contact Bin-Bin Gao (csgaobb@gmail.com).
+
+> version: Sep. 16, 2017
